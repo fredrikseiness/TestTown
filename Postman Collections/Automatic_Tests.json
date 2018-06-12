@@ -71,17 +71,6 @@
       "response": []
     },
     {
-      "_postman_id": "bca3fd18-bd01-4720-b21f-0e8884d976cc",
-      "name": "plain white sauce",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "body": {},
-        "url": ""
-      },
-      "response": []
-    },
-    {
       "_postman_id": "21dfb446-a063-4080-95ec-c2df8be4f8d0",
       "name": "plain white sauce",
       "event": [
