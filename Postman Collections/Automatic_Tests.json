@@ -1,0 +1,74 @@
+{
+  "info": {
+    "_postman_id": "b35e8430-f207-18d3-b312-326471e72685",
+    "name": "Automatic Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "a44c54f1-aa0f-2ae8-26df-b0bc319f259e",
+      "name": "Depository",
+      "description": "",
+      "item": []
+    },
+    {
+      "_postman_id": "e236ac61-2ba6-413f-510d-2e07187eb98e",
+      "name": "Seating-services",
+      "description": "",
+      "item": []
+    },
+    {
+      "_postman_id": "cfaf00b9-ee40-32e0-afbf-d5a358d907dc",
+      "name": "Get keycloak-token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "77032d77-c3f0-4da1-bec1-cb9b4ca5b2ce",
+            "type": "text/javascript",
+            "exec": [
+              "var response = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable('auth-token',response.access_token);",
+              "",
+              "tests[\"Access token returned\"] = response.access_token;",
+              "tests[\"Refresh token returned\"] = response.refresh_token;",
+              "tests[\"failing test\"] = response.lublublublublub;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "client_credentials",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "{{client_id}}",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "{{client_secret}}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{KCdomain}}/auth/realms/internal/protocol/openid-connect/token",
+        "description": "Generate keycloak-token"
+      },
+      "response": []
+    }
+  ]
+}
