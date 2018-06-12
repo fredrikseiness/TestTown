@@ -80,6 +80,40 @@
         "url": ""
       },
       "response": []
+    },
+    {
+      "_postman_id": "21dfb446-a063-4080-95ec-c2df8be4f8d0",
+      "name": "plain white sauce",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "9dfd2a19-4120-4971-814c-bff857cf4917",
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "var serviceName = JSON.parse(responseBody);",
+              "",
+              "tests[\"Correct service name returned\"] = serviceName.ServiceName == \"Depository\";"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{auth-token}}"
+          }
+        },
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": "{{domain}}/info",
+        "description": "First tentative probing. Hey you. What's up? What's your name?"
+      },
+      "response": []
     }
   ]
 }
