@@ -69,6 +69,17 @@
         "description": "Generate keycloak-token"
       },
       "response": []
+    },
+    {
+      "_postman_id": "bca3fd18-bd01-4720-b21f-0e8884d976cc",
+      "name": "plain white sauce",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": ""
+      },
+      "response": []
     }
   ]
 }
