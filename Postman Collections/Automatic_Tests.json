@@ -99,7 +99,7 @@
         "method": "GET",
         "header": [],
         "body": {},
-        "url": "https://depository-staging.devstage.entur.io/info",
+        "url": "{{domain}}/info",
         "description": "First tentative probing. Hey you. What's up? What's your name?"
       },
       "response": []
